@@ -22,15 +22,18 @@ Proyek di dalam repositori ini disusun secara bertahap, mulai dari komponen terk
 
 ### Bagian 2: Lapisan Saraf (Neural Network Layers)
 * **Multi-Neuron Layer (Hidden Layer):** Mengubah struktur dari satu neuron menjadi satu lapisan penuh berisi beberapa neuron menggunakan operasi matriks 2 dimensi (`np.dot`).
-* **Multi-Layer Architecture:** (Progres) Menghubungkan *input layer*, *hidden layer*, hingga menghasilkan *output layer*.
+* **Multi-Layer Architecture:** Menghubungkan *input layer*, *hidden layer*, hingga menghasilkan *output layer*.
 
-### Bagian 3: Pelatihan & Optimasi (Rencana Mendatang)
-* **Loss Function:** Menghitung seberapa jauh jarak antara hasil prediksi neuron dengan label asli data (misal menggunakan MSE atau Cross-Entropy).
+### Bagian 3: Evaluasi Model (Loss Functions)
+* **Mean Squared Error (MSE):** Mengimplementasikan metrik evaluasi untuk menghitung tingkat kesalahan pada tugas regresi.
+* **Binary Cross-Entropy (BCE):** Mengimplementasikan metrik *log loss* berskala penalti ekstrim untuk tugas klasifikasi biner.
+
+### Bagian 4: Pelatihan & Optimasi (Rencana Mendatang)
 * **Backpropagation & Gradient Descent:** Algoritma kalkulus untuk memperbarui nilai *weights* dan *bias* secara otomatis agar neuron menjadi semakin cerdas.
 
 ---
 
-## 🚀 Cara Menjalankan Eksperimen
+## Cara Menjalankan Eksperimen
 
 1. Clone repositori ini ke komputer lokal kamu:
    ```bash
