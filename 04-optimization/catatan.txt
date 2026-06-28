@@ -1,0 +1,37 @@
+=========================================================
+CATATAN PROBLEM SOLVING - MEMBANGUN NEURON DARI NOL
+=========================================================
+
+1. ERROR FORMATTING (NumPy vs F-String)
+- Gejala: `TypeError: unsupported format string passed to numpy.ndarray.__format__`
+- Penyebab: Mencoba memformat array NumPy berukuran 1D langsung di dalam f-string (misal: `:.4f`).
+- Solusi: Konversi output NumPy menjadi float standar Python menggunakan fungsi `float(hasil)` atau metode `hasil.item()`.
+
+2. MASALAH NILAI MENTOK (Sigmoid Saturation)
+- Gejala: Output neuron selalu stuck di angka `1.0000` atau `0.0000`.
+- Penyebab: Input data terlalu besar/timpang (misal ada angka 98.0). Saat masuk ke kombinasi linear, hasilnya terlalu ekstrem sehingga fungsi Sigmoid langsung membulatkannya ke batas maksimal.
+- Solusi: Lakukan Normalisasi data (Feature Scaling) sebelum dimasukkan ke model, atau gunakan fungsi aktivasi ReLU untuk Hidden Layers.
+
+3. ERROR DIMENSI MATRIKS 1 (Broadcasting Mismatch)
+- Gejala: `ValueError: non-broadcastable output operand with shape (4,) doesn't match the broadcast shape (4,4)`
+- Penyebab: Kesalahan saat inisialisasi jumlah input. Mengisi parameter `jumlah_input` dengan jumlah baris data (4), padahal seharusnya diisi dengan jumlah fitur/kolom (1).
+- Solusi: Selalu pastikan parameter jumlah bobot (weights) sama dengan JUMLAH FITUR (kolom), bukan jumlah total datanya.
+
+4. ERROR DIMENSI MATRIKS 2 (Alignment & Extra Brackets)
+- Gejala: `ValueError: shapes (1,4) and (1,4) not aligned: 4 (dim 1) != 1 (dim 0)`
+- Penyebab: Variabel target (Y) memiliki kelebihan tanda kurung siku `[[ ]]`, sehingga NumPy membacanya sebagai matriks 2D (1 baris, 4 kolom), yang gagal saat dikalikan dengan hasil transpose data input.
+- Solusi: Hapus satu lapis kurung siku menjadi array 1D biasa `[2.0, 4.0, 6.0, 8.0]`.
+
+=========================================================
+BEST PRACTICES & PENGINGAT
+=========================================================
+- Hindari menggunakan nama variabel `input` karena bertabrakan dengan fungsi bawaan Python. Gunakan `inputs`, `data_input`, atau `X`.
+- Jika ragu dengan proses matematika NumPy, selalu cetak ukurannya menggunakan `print(variabel.shape)`. Syarat perkalian matriks (dot product): Kolom matriks pertama harus sama dengan Baris matriks kedua.
+
+=========================================================
+BUKTI KEBERHASILAN (TRAINING LOG)
+=========================================================
+Latihan ke-1000 | Loss (Tingkat Kesalahan): 0.000172
+Bobot akhir yang dipelajari neuron: 1.9891 (Target: 2.0)
+Bias akhir yang dipelajari neuron: 0.0320 (Target: 0.0)
+Kesimpulan: Algoritma Backpropagation dan Gradient Descent berfungsi sempurna!
