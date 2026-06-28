@@ -28,8 +28,13 @@ Proyek di dalam repositori ini disusun secara bertahap, mulai dari komponen terk
 * **Mean Squared Error (MSE):** Mengimplementasikan metrik evaluasi untuk menghitung tingkat kesalahan pada tugas regresi.
 * **Binary Cross-Entropy (BCE):** Mengimplementasikan metrik *log loss* berskala penalti ekstrim untuk tugas klasifikasi biner.
 
-### Bagian 4: Pelatihan & Optimasi (Rencana Mendatang)
-* **Backpropagation & Gradient Descent:** Algoritma kalkulus untuk memperbarui nilai *weights* dan *bias* secara otomatis agar neuron menjadi semakin cerdas.
+### Bagian 4: Pelatihan & Optimasi (Backpropagation & Chain Rule)
+* **Gradient Descent:** Algoritma dasar untuk memperbarui nilai *weights* dan *bias* secara otomatis pada model linear.
+* **Chain Rule Implementation:** Menerapkan Aturan Rantai Kalkulus untuk menghitung gradien mundur melewati fungsi aktivasi Sigmoid.
+* **Analysis of Vanishing Gradient:** Memahami fenomena mengecilnya nilai turunan di ujung kurva Sigmoid yang menyebabkan *loss* turun lebih lambat.
+
+### Bagian 5: Arsitektur Jaringan Saraf Nyata (Rencana Mendatang)
+* **Multi-Layer Perceptron (MLP):** Menghubungkan Input Layer, Hidden Layer, dan Output Layer untuk mendeteksi pola non-linear yang jauh lebih kompleks.
 
 ---
 
