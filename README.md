@@ -33,8 +33,19 @@ Proyek di dalam repositori ini disusun secara bertahap, mulai dari komponen terk
 * **Chain Rule Implementation:** Menerapkan Aturan Rantai Kalkulus untuk menghitung gradien mundur melewati fungsi aktivasi Sigmoid.
 * **Analysis of Vanishing Gradient:** Memahami fenomena mengecilnya nilai turunan di ujung kurva Sigmoid yang menyebabkan *loss* turun lebih lambat.
 
-### Bagian 5: Arsitektur Jaringan Saraf Nyata (Rencana Mendatang)
-* **Multi-Layer Perceptron (MLP):** Menghubungkan Input Layer, Hidden Layer, dan Output Layer untuk mendeteksi pola non-linear yang jauh lebih kompleks.
+### Bagian 5: Arsitektur Jaringan Saraf Nyata (Multi-Layer Perceptron)
+* **Multi-Layer Perceptron (MLP):** Menghubungkan Input Layer, Hidden Layer, dan Output Layer untuk mendeteksi pola non-linear.
+* **Solving XOR Problem:** Membuktikan bahwa jaringan dengan satu *hidden layer* mampu memecahkan masalah logika XOR (yang tidak bisa diselesaikan oleh neuron tunggal).
+* **Weight Initialization & Symmetry Breaking:** Memahami mengapa inisialisasi bobot yang terlalu seragam membuat model terjebak di *local minimum*, dan bagaimana memecah simetri antar neuron.
+
+#### Visualisasi Aliran Data (Forward Pass XOR)
+<kbd>
+  <video src="06-multi-layer-perceptron/assets/xor_simulation.mp4" controls width="100%" muted autoplay loop></video>
+</kbd>
+
+### Bagian 6: Dataset Nyata & Transisi Framework (Rencana Mendatang)
+* **Real-World Application:** Menguji arsitektur MLP menggunakan dataset tabular dunia nyata.
+* **Mengenal Framework:** Mentransisikan logika matematika dasar yang telah dipelajari ke dalam ekosistem PyTorch atau TensorFlow.
 
 ---
 

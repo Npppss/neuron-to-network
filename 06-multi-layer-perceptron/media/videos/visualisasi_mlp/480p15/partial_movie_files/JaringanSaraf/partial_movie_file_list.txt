@@ -1,6 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:D:/neuron/media/videos/visualisasi_mlp/480p15/partial_movie_files/JaringanSaraf/1584795214_3857911514_223132457.mp4'
-file 'file:D:/neuron/media/videos/visualisasi_mlp/480p15/partial_movie_files/JaringanSaraf/4072820271_4071516364_19325529.mp4'
-file 'file:D:/neuron/media/videos/visualisasi_mlp/480p15/partial_movie_files/JaringanSaraf/4072820271_2335582130_3668853779.mp4'
-file 'file:D:/neuron/media/videos/visualisasi_mlp/480p15/partial_movie_files/JaringanSaraf/4072820271_1276876431_4145928145.mp4'
-file 'file:D:/neuron/media/videos/visualisasi_mlp/480p15/partial_movie_files/JaringanSaraf/4072820271_4166842112_2252956799.mp4'
