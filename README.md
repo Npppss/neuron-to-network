@@ -1,13 +1,14 @@
 # Building Neural Networks from Scratch with Python
 
-Repositori ini adalah dokumentasi perjalanan pembelajaran saya dalam membedah, memahami, dan membangun **Artificial Neural Networks (ANN)** langsung dari dasar (*from scratch*). 
+Repositori ini adalah dokumentasi perjalanan pembelajaran saya dalam membedah, memahami, dan membangun **Artificial Neural Networks (ANN)**. 
 
-Alih-alih menggunakan *high-level framework* seperti PyTorch atau TensorFlow, tujuan utama proyek ini adalah menerapkan matematika dasar di balik kecerdasan buatan menggunakan **Python** dan **NumPy**.
+Proyek ini dimulai dengan menerapkan matematika dasar di balik kecerdasan buatan menggunakan **Python** dan **NumPy** dari nol (*from scratch*), sebelum akhirnya bertransisi ke penggunaan *framework* standar industri, **PyTorch**, dengan akselerasi GPU.
 
 ## Tech Stack & Teori Dasar
 * **Bahasa Pemrograman:** Python 3.8
-* **Komputasi Matriks:** NumPy (untuk efisiensi operasi *dot product* dan manipulasi matriks)
-* **Konsep Matematika yang Dipelajari:** Aljabar Linear (Matriks), Kalkulus (Kalkulasi Gradien/Turunan), Statistik dasar.
+* **Komputasi Matriks:** NumPy & PyTorch Tensors
+* **Akselerasi Hardware:** CUDA (Nvidia GPU)
+* **Konsep Matematika yang Dipelajari:** Aljabar Linear (Matriks), Kalkulus (Kalkulasi Gradien/Turunan), Statistik dasar, Chain Rule.
 
 ---
 
@@ -17,7 +18,7 @@ Proyek di dalam repositori ini disusun secara bertahap, mulai dari komponen terk
 
 ### Bagian 1: Fondasi Neuron Tunggal (Perceptron)
 * **Single Neuron Simulation:** Membuat satu neuron buatan dasar yang menerima input fitur, mengalikannya dengan bobot (*weights*), menambahkan *bias*, dan melewatkannya ke fungsi aktivasi.
-* **Exploration of Activation Functions:** Eksperimen manual dengan fungsi **Sigmoid** ($1 / (1 + e^{-x})$) dan memahami fenomena kejenuhan nilai (*saturation*), serta alternatifnya seperti **ReLU**.
+* **Exploration of Activation Functions:** Eksperimen manual dengan fungsi **Sigmoid** dan memahami fenomena kejenuhan nilai (*saturation*), serta alternatifnya seperti **ReLU**.
 * **Feature Scaling Concept:** Memahami pentingnya standardisasi data input agar tidak mendominasi kalkulasi linear di dalam neuron.
 
 ### Bagian 2: Lapisan Saraf (Neural Network Layers)
@@ -43,9 +44,19 @@ Proyek di dalam repositori ini disusun secara bertahap, mulai dari komponen terk
   <video src="06-multi-layer-perceptron/assets/xor_simulation.mp4" controls width="100%" muted autoplay loop></video>
 </kbd>
 
-### Bagian 6: Dataset Nyata & Transisi Framework (Rencana Mendatang)
-* **Real-World Application:** Menguji arsitektur MLP menggunakan dataset tabular dunia nyata.
-* **Mengenal Framework:** Mentransisikan logika matematika dasar yang telah dipelajari ke dalam ekosistem PyTorch atau TensorFlow.
+### Bagian 6: Dataset Dunia Nyata (Real-World Application)
+* **Data Preprocessing:** Menerapkan `StandardScaler` dan `train_test_split` menggunakan Scikit-Learn.
+* **Binary & Multi-Class Classification:** Menguji arsitektur MLP berbasis NumPy pada dataset Iris murni, memodifikasi *Output Layer* menggunakan aktivasi **Softmax** dan **Categorical Cross-Entropy Loss** untuk memecahkan probabilitas kelas yang saling bersaing.
+
+### Bagian 7: Transisi ke Ekosistem Profesional (PyTorch)
+* **Tensor & GPU Acceleration (CUDA):** Bermigrasi dari array NumPy ke Tensor PyTorch untuk memanfaatkan komputasi paralel GPU.
+* **Autograd:** Menggantikan perhitungan manual *Chain Rule* dan *Backpropagation* dengan diferensiasi otomatis (`loss.backward()`).
+* **Model Arsitektur (nn.Module):** Membangun MLP menggunakan *class* modular standar industri, *Loss Function* bawaan (`nn.CrossEntropyLoss`), dan algoritma optimasi modern (`torch.optim.Adam`).
+
+---
+
+## Catatan Matematika (Cheat Sheet)
+Seluruh rumus *Forward Pass*, perhitungan *Error*, dan *Backpropagation* yang saya susun dari nol terdokumentasi lengkap di: [Math Cheat Sheet](math_cheatsheet.md).
 
 ---
 
